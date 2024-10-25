@@ -1,0 +1,5 @@
+login,name,surname,patronymic,password,email,specialization
+alexey_p,Алексей,Петров,Алексеевич,qwerty123,alexey@mail.ru,frontend
+anna_s,Анна,Смирнова,Александровна,password1,anna.smirnova@mail.ru,fullstack
+dmitriy_v,Дмитрий,Васильев,Дмитриевич,987654321,dmitriy.v@mail.ru,devops
+olga_n,Ольга,Николаева,Сергеевна,mypassword!,olga.nik@mail.ru,design
