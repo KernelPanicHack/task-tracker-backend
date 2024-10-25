@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\ShelterResource;
+use App\Models\Shelter;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -15,9 +17,6 @@ class UserController extends Controller
 
     public function users()
     {
-        $users = User::all();
-        return response([
-            'user' => $users
-        ]);
+        return User::with('tasks')->get();
     }
 }
