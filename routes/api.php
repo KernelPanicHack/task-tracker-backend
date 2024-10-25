@@ -6,6 +6,7 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Api\PostsController;
+use \App\Http\Controllers\Api\UserController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -18,6 +19,8 @@ Route::get('/verify/{token}', [AuthController::class, 'verifyEmail']);
 
 Route::get('/posts', [PostsController::class, 'index'])->name('api.posts')
 ->middleware(['auth:sanctum']); // can:update title
+
+Route::get('users', [UserController::class, 'users'])->name('api.users');
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('api.logout');
