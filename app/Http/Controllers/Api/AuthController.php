@@ -19,8 +19,21 @@ class AuthController extends Controller
 {
     public function register(RegistrationRequest $request)
     {
+        $fullName = $request->fullName;
+        $parts = preg_split('/[\s-]+/', $fullName);
+        $parsed = [
+            'surname' => $parts[0] ?? null,
+            'name' => $parts[1] ?? null,
+            'patronymic' => $parts[2] ?? null,
+        ];
+
+
+
         $user = User::create([
-            'name' => $request->name,
+            'name' => $parsed['name'],
+            'surname' => $parsed['surname'],
+            'patronymic' => $parsed['patronymic'],
+            'login' => $request->login,
             'email' => $request->email,
             'password' => ($request->password),
         ]);
