@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Exports\TasksExport;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TaskRequest;
 use App\Models\Task;
 use App\Models\TaskState;
 use App\Models\UserTask;
@@ -23,7 +24,7 @@ class TaskController extends Controller
         return $task;
     }
 
-    public function updateState(Request $request, string $taskId)
+    public function updateState(TaskRequest $request, string $taskId)
     {
         $taskState = TaskState::where('task_id', $taskId)->first();
         $taskState->update([
@@ -36,7 +37,7 @@ class TaskController extends Controller
 
     }
 
-    public function update(Request $request, string $taskId)
+    public function update(TaskRequest $request, string $taskId)
     {
         $task = Task::where('id', $taskId)->first();
 
@@ -55,7 +56,7 @@ class TaskController extends Controller
         ]);
     }
 
-    public function create(Request $request)
+    public function create(TaskRequest $request)
     {
         $task = Task::create([
             'title' => $request->title,

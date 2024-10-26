@@ -9,6 +9,7 @@ use \App\Http\Controllers\Api\PostsController;
 use \App\Http\Controllers\Api\UserController;
 use \App\Http\Controllers\Api\TaskController;
 use \App\Http\Controllers\Api\StateController;
+use \App\Http\Controllers\Api\CommentController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -19,8 +20,7 @@ Route::post('login', [AuthController::class, 'login'])->name('login');
 Route::post('email/resend', [AuthController::class, 'resendVerificationEmail']);
 Route::get('/verify/{token}', [AuthController::class, 'verifyEmail']);
 
-Route::get('/posts', [PostsController::class, 'index'])->name('api.posts')
-->middleware(['auth:sanctum']); // can:update title
+Route::post('comment/{task}', [CommentController::class, 'create'])->name('api.comment.create');
 
 Route::get('users', [UserController::class, 'users'])->name('api.users');
 Route::get('users/{user}', [UserController::class, 'show'])->name('api.users.show');

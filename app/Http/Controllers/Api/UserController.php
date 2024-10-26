@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
 use App\Http\Resources\ShelterResource;
 use App\Models\Shelter;
 use App\Models\User;
@@ -12,7 +13,8 @@ class UserController extends Controller
 {
     public function users()
     {
-        return User::with('tasks')->get();
+        return User::with('tasks', 'roles')->get();
+
     }
 
     public function show(string $user)
@@ -25,7 +27,7 @@ class UserController extends Controller
         ]);
     }
 
-    public function update(Request $request, string $userId)
+    public function update(UserRequest $request, string $userId)
     {
         $fullName = $request->fullName;
         $parts = preg_split('/[\s-]+/', $fullName);

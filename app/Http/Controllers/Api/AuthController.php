@@ -37,6 +37,7 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => ($request->password),
         ]);
+        $user->assignRole('guest');
 
         $token = Str::random(60);
 
