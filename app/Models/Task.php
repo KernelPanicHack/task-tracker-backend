@@ -26,9 +26,9 @@ class Task extends Model
         return $this->hasOneThrough(State::class, TaskState::class, 'task_id', 'id', 'id', 'state_id');
     }
 
-    public function users(): BelongsTo
+    public function users(): HasOneThrough
     {
-        return $this->belongsTo(User::class,  'task_id', 'id');
+        return $this->hasOneThrough(User::class, UserTask::class, 'task_id', 'id', 'id', 'user_id');
     }
 
     public function comments(): HasMany

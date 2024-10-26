@@ -33,7 +33,9 @@ Route::get('tasks/{task}/update_state', [TaskController::class, 'updateState'])-
 Route::put('tasks/{task}/update', [TaskController::class, 'update'])->name('api.tasks.update');
 Route::delete('tasks/{task}', [TaskController::class, 'delete'])->name('api.tasks.delete');
 
-Route::get('states', [StateController::class, 'states'])->name('api.states');
+Route::get('states', [StateController::class, 'states'])->name('api.states')->middleware('auth:sanctum');
+
+Route::get('export-tasks', [TaskController::class, 'export'])->name('api.tasks.export');
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('api.logout');
