@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
 //        $this->call(TaskSeeder::class);
 //        $this->call(UserTaskSeeder::class);
 //        $this->call(StateSeeder::class);
-//            $this->call(TaskStateSeeder::class);
-//            $this->call(CommentSeeder::class);
+//        $this->call(TaskStateSeeder::class);
+        $this->call(CommentSeeder::class);
     }
 }

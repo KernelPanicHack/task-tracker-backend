@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Task extends Model
@@ -20,15 +21,9 @@ class Task extends Model
     ];
 
 
-
-    public function task_comments(): HasMany
+    public function tasks_state(): HasOneThrough
     {
-        return $this->hasMany(TaskComment::class, 'task_id', 'id');
-    }
-
-    public function tasks_state(): HasOne
-    {
-        return $this->hasOne(TaskState::class,  'task_id', 'id',);
+        return $this->hasOneThrough(State::class, TaskState::class, 'task_id', 'id', 'id', 'state_id');
     }
 
     public function users(): BelongsTo
@@ -38,6 +33,6 @@ class Task extends Model
 
     public function comments(): HasMany
     {
-        return $this->hasMany(TaskComment::class, 'task_id', 'id');
+        return $this->hasMany(Comment::class, 'task_id', 'id');
     }
 }
