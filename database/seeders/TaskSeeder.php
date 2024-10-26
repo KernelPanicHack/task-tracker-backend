@@ -15,7 +15,7 @@ class TaskSeeder extends Seeder
      */
     public function run(): void
     {
-        $filePath = storage_path('../database/data/tasks.csv');
+        $filePath = storage_path('../database/data/tasks_2.csv');
         if (($handle = fopen($filePath, 'r')) !== false) {
             // Пропускаем заголовок
             fgetcsv($handle);

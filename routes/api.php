@@ -29,9 +29,10 @@ Route::delete('users/{user}', [UserController::class, 'delete'])->name('api.user
 
 Route::get('tasks', [TaskController::class, 'index'])->name('api.tasks');
 Route::get('tasks/{task}', [TaskController::class, 'show'])->name('api.tasks.show');
-Route::get('tasks/{task}/update_state', [TaskController::class, 'updateState'])->name('api.tasks.update_state');
+Route::put('tasks/{task}/update_state', [TaskController::class, 'updateState'])->name('api.tasks.update_state');
 Route::put('tasks/{task}/update', [TaskController::class, 'update'])->name('api.tasks.update');
 Route::delete('tasks/{task}', [TaskController::class, 'delete'])->name('api.tasks.delete');
+Route::post('tasks', [TaskController::class, 'create'])->name('api.tasks.create');
 
 Route::get('states', [StateController::class, 'states'])->name('api.states')->middleware('auth:sanctum');
 
