@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <style>
         :root {
-            --body: 27, 37, 59;
+            /*--body: 239, 235, 249;*/
+            --body: 223, 224, 255;
             --success-bg: 17, 157, 17;
             --success-text: 178, 255, 178;
             --warning-bg: 225, 169, 0;
@@ -28,10 +29,12 @@
             --dark-700: 39, 45, 69;
             --dark-800: 27, 37, 59;
             --dark-900: 15, 23, 42;
-            --primary: 81, 144, 254;
+            /*--primary: 54, 26, 94;*/
+            --primary: 67, 55, 132;
             --secondary: 182, 41, 130;
-            --border:71,116,139 ;
-            --border-alpha:71,116,139,0.8 ;
+            --border:26,24,49 ;
+            --border-alpha:26,24,49,0.8 ;
+            --text-color:26,24,49;
         }
         html{
             height: 100%;
@@ -46,7 +49,7 @@
             height: 100%;
             margin: 0;
             width: 100%;
-            color: white;
+            color: rgb(var(--text-color));
         }
         .main {
             display: flex;

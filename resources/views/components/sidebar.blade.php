@@ -3,7 +3,7 @@
     #sidebar {
     height: 100%;
     border-right: 1px solid rgba(var(--border-alpha));
-    color: #fff;
+        color: rgb(var(--text-color));
     transition: all 0.3s;
     font-size: 120%;
     }
@@ -19,7 +19,7 @@
     margin-left: -250px;
     }
     #sidebar ul i {
-        color: rgba(var(--primary),1);
+        color: rgba(var(--text-color),1);
     }
 
 
@@ -35,7 +35,7 @@
 
     #sidebar ul li.active>a,
     a[aria-expanded="true"] {
-    color: #fff;
+        color: rgb(var(--text-color));
 
     }
 
@@ -132,7 +132,7 @@
     </style>
     <ul class="nav flex-column p-4">
         <li class="nav-item">
-            <a href="{{ route('admin.users') }}" class="list-group-item list-group-item-action active" style="color: white">
+            <a href="{{ route('admin.users') }}" class="list-group-item list-group-item-action active" style="color: rgb(var(--text-color));">
                 <i class="bi bi-person"></i>
                 <span class="hide-text">Users</span>
             </a>

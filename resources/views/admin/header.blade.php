@@ -3,7 +3,7 @@
 
         <a class="navbar-brand" href="{{ route('admin.dashboard') }}">
             <i class="bi bi-house px-2" style="font-size: 1.3rem; color: rgba(var(--primary),1); "></i>
-            Admin Panel</a>
+            <span style="color: rgb(var(--text-color));">Admin Panel</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
 
@@ -19,7 +19,7 @@
                     </form>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.login') }}">Login</a>
+                        <a class="btn" style="background-color: rgba(var(--primary),1); color:white;" href="{{ route('admin.login') }}">Login</a>
                     </li>
                 @endif
             </ul>

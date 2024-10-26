@@ -41,7 +41,7 @@ class UserController extends Controller
             'name' => $parsed['name'],
             'surname' => $parsed['surname'],
             'patronymic' => $parsed['patronymic'],
-            ]);
+        ]);
         return response([
             'message' => 'user successfully updated'
         ]);

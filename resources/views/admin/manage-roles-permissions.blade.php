@@ -30,7 +30,7 @@
                 <label for="role-name" class="form-label">Role Name</label>
                 <input type="text" id="role-name" name="name" class="form-control" required>
             </div>
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-secondary">
                 Create Role</button>
         </form>
     </div>
@@ -44,7 +44,7 @@
                 <label for="permission-name" class="form-label">Permission Name</label>
                 <input type="text" id="permission-name" name="name" class="form-control" required>
             </div>
-            <button type="submit" class="btn btn-primary">Create Permission</button>
+            <button type="submit" class="btn btn-secondary">Create Permission</button>
         </form>
     </div>
 
@@ -69,7 +69,7 @@
                     @endforeach
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Assign Permission</button>
+            <button type="submit" class="btn btn-secondary">Assign Permission</button>
         </form>
     </div>
 
