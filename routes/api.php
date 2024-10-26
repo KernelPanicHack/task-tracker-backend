@@ -21,6 +21,9 @@ Route::get('/posts', [PostsController::class, 'index'])->name('api.posts')
 ->middleware(['auth:sanctum']); // can:update title
 
 Route::get('users', [UserController::class, 'users'])->name('api.users');
+Route::get('users/{user}', [UserController::class, 'show'])->name('api.users.show');
+Route::put('users/{user}/update', [UserController::class, 'update'])->name('api.users.update');
+Route::delete('users/{user}', [UserController::class, 'delete'])->name('api.users.delete');
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('api.logout');
