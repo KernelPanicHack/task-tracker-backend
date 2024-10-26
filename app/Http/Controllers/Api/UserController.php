@@ -19,4 +19,6 @@ class UserController extends Controller
     {
         return User::with('tasks')->get();
     }
+
+    public funt
 }
