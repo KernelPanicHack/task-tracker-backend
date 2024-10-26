@@ -117,7 +117,7 @@
                 </ul>
             </div>
         @endif
-        <div class="container mt-5">
+        <div class="container mt-5" style="margin-bottom: 10%">
             @yield('content')
         </div>
     </div>

@@ -1,5 +1,5 @@
 
-    <table class="table " id="userTable" >
+    <table class="table" id="userTable" >
         <thead>
         <tr class="table-secondary ">
             <th>

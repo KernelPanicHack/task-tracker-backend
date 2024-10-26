@@ -84,7 +84,7 @@ class TaskController extends Controller
     }
     public function export()
     {
-        $fileName = 'tasks_export.xlsx';
+        $fileName = date('Y-m-d_H-i-s') . '_export.xlsx';
         Excel::store(new TasksExport, $fileName, 'public');
 
         return Excel::download(new TasksExport, $fileName);
