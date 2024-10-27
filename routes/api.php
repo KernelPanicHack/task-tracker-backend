@@ -20,24 +20,25 @@ Route::post('login', [AuthController::class, 'login'])->name('login');
 Route::post('email/resend', [AuthController::class, 'resendVerificationEmail']);
 Route::get('/verify/{token}', [AuthController::class, 'verifyEmail']);
 
-Route::post('comment/{task}', [CommentController::class, 'create'])->name('api.comment.create');
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('comment/{task}', [CommentController::class, 'create'])->name('api.comment.create');
 
-Route::get('users', [UserController::class, 'users'])->name('api.users');
-Route::get('users/{user}', [UserController::class, 'show'])->name('api.users.show');
-Route::put('users/{user}/update', [UserController::class, 'update'])->name('api.users.update');
-Route::delete('users/{user}', [UserController::class, 'delete'])->name('api.users.delete');
-Route::get('role:user', [UserController::class, 'abra'])->name('api.role.abra');
+    Route::get('users', [UserController::class, 'users'])->name('api.users');
+    Route::get('users/{user}', [UserController::class, 'show'])->name('api.users.show');
+    Route::put('users/{user}/update', [UserController::class, 'update'])->name('api.users.update');
+    Route::delete('users/{user}', [UserController::class, 'delete'])->name('api.users.delete');
+    Route::get('role:user', [UserController::class, 'abra'])->name('api.role.abra');
 
-Route::get('tasks', [TaskController::class, 'index'])->name('api.tasks');
-Route::get('tasks/{task}', [TaskController::class, 'show'])->name('api.tasks.show');
-Route::put('tasks/{task}/update_state', [TaskController::class, 'updateState'])->name('api.tasks.update_state');
-Route::put('tasks/{task}/update', [TaskController::class, 'update'])->name('api.tasks.update');
-Route::delete('tasks/{task}', [TaskController::class, 'delete'])->name('api.tasks.delete');
-Route::post('tasks', [TaskController::class, 'create'])->name('api.tasks.create');
+    Route::get('tasks', [TaskController::class, 'index'])->name('api.tasks');
+    Route::get('tasks/{task}', [TaskController::class, 'show'])->name('api.tasks.show');
+    Route::put('tasks/{task}/update_state', [TaskController::class, 'updateState'])->name('api.tasks.update_state');
+    Route::put('tasks/{task}/update', [TaskController::class, 'update'])->name('api.tasks.update');
+    Route::delete('tasks/{task}', [TaskController::class, 'delete'])->name('api.tasks.delete');
+    Route::post('tasks', [TaskController::class, 'create'])->name('api.tasks.create');
 
-Route::get('states', [StateController::class, 'states'])->name('api.states');
-Route::get('export-tasks', [TaskController::class, 'export'])->name('api.tasks.export');
-
+    Route::get('states', [StateController::class, 'states'])->name('api.states');
+    Route::get('export-tasks', [TaskController::class, 'export'])->name('api.tasks.export');
+});
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('api.logout');
 });

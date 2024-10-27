@@ -19,49 +19,7 @@ use Illuminate\Http\Request;
  *     )
  * )
  *
- * @OA\Post(
- *     path="/api/register",
- *     summary="Регистрация",
- *     tags={"Auth"},
  *
- *     @OA\RequestBody(
- *         @OA\JsonContent(
- *             allOf={
- *                 @OA\Schema(
- *                     @OA\Property(property="name", type="string", example="Krirll") ,
- *                     @OA\Property(property="email", type="string", example="example@mail.ru") ,
- *                     @OA\Property(property="password", type="string", example="12345678") ,
- *                 )
- *             }
- *         )
- *     ),
- *
- *     @OA\Response(
- *         response=200,
- *         description="send massage about email verification",
- *         @OA\JsonContent(
- *             @OA\Property(property="message", type="string", example="Email verification send")
- *         ),
- *     ),
- *     @OA\Response(
- *          response=422,
- *          description="send data verification err",
- *          @OA\JsonContent(
- *              @OA\Property(property="message", type="string", example="The email has already been taken"),
- *              @OA\Property(property="errors", type="object",
- *                  @OA\Property(property="name", type="array",
- *                      @OA\Items( type="string", example="The name field is required"),
- *                  ),
- *                  @OA\Property (property="email", type="array",
- *                      @OA\Items( type="string", example="The email has already been taken."),
- *                  ),
- *                  @OA\Property (property="password", type="array",
- *                      @OA\Items( type="string", example="The password field must be at least 8 characters"),
- *                  ),
- *              )
- *          )
- *     )
- * )
  * @OA\Post(
  *     path="/api/login",
  *     summary="Вход",

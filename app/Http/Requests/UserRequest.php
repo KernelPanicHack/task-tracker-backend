@@ -22,7 +22,7 @@ class UserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'fullName' => 'regex:/^[\p{Cyrillic}\s\-]{1,50}$/u|max:20|string',
+            'fullName' => 'regex:/^[\p{Cyrillic}\s\-]{1,50}$/u|max:50|string',
             'specialization' => 'string|max:124'
         ];
     }
