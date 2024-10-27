@@ -13,7 +13,7 @@ class TaskStateSeeder extends Seeder
      */
     public function run(): void
     {
-        $filePath = storage_path('../database/data/task_states_2.csv');
+        $filePath = storage_path('../database/data/task_states.csv');
         if (($handle = fopen($filePath, 'r')) !== false) {
             // Пропускаем заголовок
             fgetcsv($handle);
