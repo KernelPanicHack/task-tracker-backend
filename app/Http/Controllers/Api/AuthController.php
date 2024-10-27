@@ -146,5 +146,4 @@ class AuthController extends Controller
     }
 }
 
-//todo ограничения на рег
 

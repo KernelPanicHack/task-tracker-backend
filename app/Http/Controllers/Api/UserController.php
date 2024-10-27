@@ -58,4 +58,16 @@ class UserController extends Controller
             'message' => 'User removed'
         ]);
     }
+
+    public function abra()
+    {
+        $data = [];
+        $users = User::all();
+        foreach ($users as $user){
+            if ($user->hasRole('user')){
+                $data[] = $user;
+            }
+        }
+        return $data;
+    }
 }

@@ -26,6 +26,7 @@ Route::get('users', [UserController::class, 'users'])->name('api.users');
 Route::get('users/{user}', [UserController::class, 'show'])->name('api.users.show');
 Route::put('users/{user}/update', [UserController::class, 'update'])->name('api.users.update');
 Route::delete('users/{user}', [UserController::class, 'delete'])->name('api.users.delete');
+Route::get('role:user', [UserController::class, 'abra'])->name('api.role.abra');
 
 Route::get('tasks', [TaskController::class, 'index'])->name('api.tasks');
 Route::get('tasks/{task}', [TaskController::class, 'show'])->name('api.tasks.show');
@@ -34,8 +35,7 @@ Route::put('tasks/{task}/update', [TaskController::class, 'update'])->name('api.
 Route::delete('tasks/{task}', [TaskController::class, 'delete'])->name('api.tasks.delete');
 Route::post('tasks', [TaskController::class, 'create'])->name('api.tasks.create');
 
-Route::get('states', [StateController::class, 'states'])->name('api.states')->middleware('auth:sanctum');
-
+Route::get('states', [StateController::class, 'states'])->name('api.states');
 Route::get('export-tasks', [TaskController::class, 'export'])->name('api.tasks.export');
 
 Route::middleware('auth:sanctum')->group(function () {

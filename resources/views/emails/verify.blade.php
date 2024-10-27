@@ -59,7 +59,7 @@
 
         <p>If you did not create an account, no further action is required.</p>
 
-        <p>Thank you,<br>The Team</p>
+        <p>Thank you,<br>Kernel panic</p>
     </div>
 </div>
 

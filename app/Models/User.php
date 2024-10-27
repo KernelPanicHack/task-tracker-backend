@@ -58,7 +58,6 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(UserTask::class, 'user_id', 'id');
     }
-    //todo path не возвращается
     public function tasks()
     {
         return $this->hasManyThrough(Task::class, UserTask::class, 'user_id', 'id', 'id', 'task_id');

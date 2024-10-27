@@ -328,6 +328,179 @@
                     }
                 ]
             }
+        },
+        "/api/tasks": {
+            "get": {
+                "tags": [
+                    "Task"
+                ],
+                "summary": "Все задачи",
+                "operationId": "feed89770241fcb6af2325dafc9adfde",
+                "responses": {
+                    "200": {
+                        "description": "send all tasks",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": "1"
+                                        },
+                                        "title": {
+                                            "type": "string",
+                                            "example": "обновить код"
+                                        },
+                                        "task_body": {
+                                            "type": "string",
+                                            "example": "Обновить исходный код"
+                                        },
+                                        "task_state": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": "1"
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "example": "Бэклог"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "users": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": "1"
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "example": "Кирилл"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "example@mail.ru"
+                                                },
+                                                "surname": {
+                                                    "type": "string",
+                                                    "example": "Васин"
+                                                },
+                                                "patronymic": {
+                                                    "type": "string",
+                                                    "example": "Васильевич"
+                                                },
+                                                "specialization": {
+                                                    "type": "string",
+                                                    "example": "backend"
+                                                },
+                                                "login": {
+                                                    "type": "string",
+                                                    "example": "login"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/tasks/1": {
+            "get": {
+                "tags": [
+                    "Task"
+                ],
+                "summary": "Конкретная задача",
+                "operationId": "f46ae5d0a726ad94691f3ca5232e5a8c",
+                "responses": {
+                    "200": {
+                        "description": "show one task",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": 1
+                                        },
+                                        "title": {
+                                            "type": "string",
+                                            "example": "обновить код"
+                                        },
+                                        "task_body": {
+                                            "type": "string",
+                                            "example": "Обновить исходный код"
+                                        },
+                                        "comments": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 1
+                                                    },
+                                                    "user_id": {
+                                                        "type": "integer",
+                                                        "example": 1
+                                                    },
+                                                    "task_id": {
+                                                        "type": "integer",
+                                                        "example": 1
+                                                    },
+                                                    "text": {
+                                                        "type": "string",
+                                                        "example": "Текст комментария"
+                                                    },
+                                                    "user": {
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "integer",
+                                                                "example": 1
+                                                            },
+                                                            "name": {
+                                                                "type": "string",
+                                                                "example": "Кирилл"
+                                                            },
+                                                            "email": {
+                                                                "type": "string",
+                                                                "example": "example@email.ru"
+                                                            },
+                                                            "surname": {
+                                                                "type": "string",
+                                                                "example": "Фамилия"
+                                                            },
+                                                            "patronymic": {
+                                                                "type": "string",
+                                                                "example": "Отчество"
+                                                            },
+                                                            "specialization": {
+                                                                "type": "string",
+                                                                "example": "Backend"
+                                                            },
+                                                            "login": {
+                                                                "type": "string",
+                                                                "example": "login"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -342,6 +515,10 @@
         {
             "name": "Auth",
             "description": "Auth"
+        },
+        {
+            "name": "Task",
+            "description": "Task"
         }
     ]
 }
